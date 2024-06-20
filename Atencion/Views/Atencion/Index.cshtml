@@ -1,0 +1,245 @@
+<<<<<<< HEAD
+﻿@model IEnumerable<Atencion.Models.Cliente>
+@{
+    Layout = null;
+}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .resaltar{
+        cursor: default;
+        background-color: darkgrey;
+        color: crimson;
+    }
+</style>
+
+<p><center><strong>LISTADO DE CLIENTES ATENDIDOS</strong></center></p>
+
+<table class="table" style="width: 100%;">
+    <tr>
+        <td>
+            <form method="post" action="/Atencion/Index">
+                <table>
+                    <tr>
+                        <td width="148px">&nbsp;</td>
+                        <td width="148px">&nbsp;</td>
+                        <td width="148px">&nbsp;</td>
+                        <td width="148px">&nbsp;</td>
+                        <td width="75px">&nbsp;</td>
+                        <td colspan="2" style="font-weight: bold;">Selecciona Rango de Fechas: </td>
+                        <td><input type="text" id="daterange" name="daterange" value="@($"{ViewBag.FechaInicio} - {ViewBag.FechaFin}")"/></td>
+                    </tr>
+                </table>
+                <button type="submit" id="procesar" style="display:none;"></button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="table" id="tbListado" style="width: 70%;">
+                <thead>
+                    <tr style="text-align:center;">
+                        <th data-columna="nombre">Nombre</th>
+                        <th data-columna="apellidos">Apellidos</th>
+                        <th data-columna="celular">Tel&eacute;fono Celular</th>
+                        <th data-columna="email">Email</th>
+                        <th data-columna="sexo">Sexo</th>
+                        <th data-columna="motivo">Motivo</th>
+                        <th data-columna="fecha">Fecha</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Cliente cliente in @Model)
+                    {
+                    <tr>
+                        <td>@cliente.Nombre</td>
+                        <td>@cliente.Apellidos</td>
+                        <td>@cliente.Celular</td>
+                        <td>@cliente.Email</td>
+                        <td>@cliente.Sexo</td>
+                        <td>@cliente.Motivo</td>
+                        <td>@cliente.FechaAlta.ToString("dd/MM/yyyy")</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#daterange').daterangepicker({
+            locale: {
+                format: 'DD/MM/YYYY'
+            },
+            startDate: moment('@ViewBag.FechaInicio', 'YYYY-MM-DD').format('DD/MM/YYYY'),
+            endDate: moment('@ViewBag.FechaFin', 'YYYY-MM-DD').format('DD/MM/YYYY')
+        });
+    });
+
+    $('#daterange').on('apply.daterangepicker', function(ev, picker) {
+        document.getElementById("procesar").click();
+    });
+
+    setInterval(function () {
+        location.reload();
+    }, 10000);
+
+=======
+﻿@model IEnumerable<Atencion.Models.Cliente>
+@{
+    Layout = null;
+}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .resaltar{
+        cursor: default;
+        background-color: darkgrey;
+        color: crimson;
+    }
+</style>
+
+<p><center><strong>LISTADO DE CLIENTES ATENDIDOS</strong></center></p>
+
+<table class="table" style="width: 100%;">
+    <tr>
+        <td>
+            <form method="post" action="/Atencion/Index">
+                <table>
+                    <tr>
+                        <td width="148px">&nbsp;</td>
+                        <td width="148px">&nbsp;</td>
+                        <td width="148px">&nbsp;</td>
+                        <td width="148px">&nbsp;</td>
+                        <td width="75px">&nbsp;</td>
+                        <td colspan="2" style="font-weight: bold;">Selecciona Rango de Fechas: </td>
+                        <td><input type="text" id="daterange" name="daterange" value="@($"{ViewBag.FechaInicio} - {ViewBag.FechaFin}")"/></td>
+                    </tr>
+                </table>
+                <button type="submit" id="procesar" style="display:none;"></button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table class="table" id="tbListado" style="width: 70%;">
+                <thead>
+                    <tr style="text-align:center;">
+                        <th data-columna="nombre">Nombre</th>
+                        <th data-columna="apellidos">Apellidos</th>
+                        <th data-columna="celular">Tel&eacute;fono Celular</th>
+                        <th data-columna="email">Email</th>
+                        <th data-columna="sexo">Sexo</th>
+                        <th data-columna="motivo">Motivo</th>
+                        <th data-columna="fecha">Fecha</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Cliente cliente in @Model)
+                    {
+                    <tr>
+                        <td>@cliente.Nombre</td>
+                        <td>@cliente.Apellidos</td>
+                        <td>@cliente.Celular</td>
+                        <td>@cliente.Email</td>
+                        <td>@cliente.Sexo</td>
+                        <td>@cliente.Motivo</td>
+                        <td>@cliente.FechaAlta.ToString("dd/MM/yyyy")</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#daterange').daterangepicker({
+            locale: {
+                format: 'DD/MM/YYYY'
+            },
+            startDate: moment('@ViewBag.FechaInicio', 'YYYY-MM-DD').format('DD/MM/YYYY'),
+            endDate: moment('@ViewBag.FechaFin', 'YYYY-MM-DD').format('DD/MM/YYYY')
+        });
+    });
+
+    $('#daterange').on('apply.daterangepicker', function(ev, picker) {
+        document.getElementById("procesar").click();
+    });
+
+    setInterval(function () {
+        location.reload();
+    }, 10000);
+
+>>>>>>> f8566ec (Tercera carga)
+    document.addEventListener("DOMContentLoaded", function() {
+        const tabla = document.getElementById("tbListado");
+        const cabeceras = tabla.querySelectorAll("thead th");
+
+        cabeceras.forEach(cabecera => {
+            cabecera.addEventListener("click", function() {
+                const columna = this.getAttribute("data-columna");
+                const ordenActual = this.getAttribute("data-orden") || "asc";
+
+                const nuevoOrden = ordenActual === "asc" ? "desc" : "asc";
+                this.setAttribute("data-orden", nuevoOrden);
+
+                ordenarTabla(columna, nuevoOrden);
+            });
+        });
+
+        function ordenarTabla(columna, orden) {
+            const tbody = tabla.querySelector("tbody");
+            const filas = Array.from(tbody.querySelectorAll("tr"));
+
+            filas.sort((filaA, filaB) => {
+                const valorA = obtenerValorCelda(filaA, columna);
+                const valorB = obtenerValorCelda(filaB, columna);
+
+                if (isNaN(valorA) || isNaN(valorB)) {
+                    return valorA.localeCompare(valorB);
+                } else {
+                    return parseFloat(valorA) - parseFloat(valorB);
+                }
+            });
+
+            if (orden === "desc") {
+                filas.reverse();
+            }
+
+            filas.forEach(fila => {
+                tbody.appendChild(fila);
+            });
+        }
+
+        function obtenerValorCelda(fila, columna) {
+            const celda = fila.querySelector(`td:nth-child(${Array.from(fila.parentNode.rows[0].cells).findIndex(th => th.getAttribute("data-columna") === columna) + 1})`);
+            return celda ? celda.textContent.trim() : "";
+        }
+<<<<<<< HEAD
+    });
+=======
+    });
+>>>>>>> f8566ec (Tercera carga)
+</script>

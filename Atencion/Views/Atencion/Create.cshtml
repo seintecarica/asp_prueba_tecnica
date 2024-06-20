@@ -1,0 +1,174 @@
+<<<<<<< HEAD
+﻿<body>
+    <br />
+    <p><strong>FORMULARIO WEB DE ATENCION AL CLIENTE</strong></p>
+    <br />
+    <form style="justify-content: center;">
+        <table>
+            <tr>
+                <td style="width: 220px; font-weight: bold;">Nombre:</td>
+                <td style="width: 250px;">
+                    <input type="text" class="form-control" id="nombre" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Apellidos:</td>
+                <td style="width: 200px;">
+                    <input type="text" class="form-control" id="apellidos" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Tel&eacute;fono Celular:</td>
+                <td style="width: 200px;">
+                    <input type="text" class="form-control" id="celular" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Email:</td>
+                <td style="width: 200px;">
+                    <input type="text" class="form-control" id="email" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold" ;>Sexo:</td>
+                <td style="width: 200px;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" value="H" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">Hombre</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="sexo" value="M" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">Mujer</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Motivo:</td>
+                <td style="width: 200px;">
+                    <select name="" class="form-control" id="motivo">
+                        <option value="Incidencia">Incidencia</option>
+                        <option value="Queja">Queja</option>
+                        <option value="Reclamacion">Reclamaci&oacute;n</option>
+                        <option value="Sugerencia">Sugerencia</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br /><br />
+    </form>
+    <button type="" onclick="procesar()">ENVIAR</button>
+</body>
+
+<script>
+    function procesar() {
+        var celular = document.getElementById('celular').value;
+        var nombre = document.getElementById('nombre').value;
+        var apellidos = document.getElementById('apellidos').value;
+        var email = document.getElementById('email').value;
+        var sexo = document.getElementsByName('sexo');
+=======
+﻿<body>
+    <br />
+    <p><strong>FORMULARIO WEB DE ATENCION AL CLIENTE</strong></p>
+    <br />
+    <form style="justify-content: center;">
+        <table>
+            <tr>
+                <td style="width: 220px; font-weight: bold;">Nombre:</td>
+                <td style="width: 250px;">
+                    <input type="text" class="form-control" id="nombre" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Apellidos:</td>
+                <td style="width: 200px;">
+                    <input type="text" class="form-control" id="apellidos" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Tel&eacute;fono Celular:</td>
+                <td style="width: 200px;">
+                    <input type="text" class="form-control" id="celular" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Email:</td>
+                <td style="width: 200px;">
+                    <input type="text" class="form-control" id="email" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold" ;>Sexo:</td>
+                <td style="width: 200px;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sexo" value="H" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">Hombre</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="sexo" value="M" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">Mujer</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px; font-weight: bold;">Motivo:</td>
+                <td style="width: 200px;">
+                    <select name="" class="form-control" id="motivo">
+                        <option value="Incidencia">Incidencia</option>
+                        <option value="Queja">Queja</option>
+                        <option value="Reclamacion">Reclamaci&oacute;n</option>
+                        <option value="Sugerencia">Sugerencia</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br /><br />
+    </form>
+    <button type="" onclick="procesar()">ENVIAR</button>
+</body>
+
+<script>
+    function procesar() {
+        var celular = document.getElementById('celular').value;
+        var nombre = document.getElementById('nombre').value;
+        var apellidos = document.getElementById('apellidos').value;
+        var email = document.getElementById('email').value;
+        var sexo = document.getElementsByName('sexo');
+>>>>>>> f8566ec (Tercera carga)
+        for (var i = 0; i < sexo.length; i++) {
+            if (sexo[i].checked) {
+                sexo = sexo[i].value;
+            }
+<<<<<<< HEAD
+        }
+        var motivo = document.getElementById('motivo').value;
+
+        alert("SELECT \nCELULAR, \nCASE"+
+            "\n WHEN MOTIVO = 'Incidemcia' THEN MOTIVO"+
+            "\nWHEN MOTIVO = 'Queja' THEN MOTIVO \nWHEN MOTIVO = 'Reclamación' THEN MOTIVO \n" +
+            "ELSE '-' END AS MOTIVO \n" +
+            "CAST(FECHA_ALTA AS DATE) AS FECHA_ALTA\n"+
+            " FROM ATENCION_CLIENTE \n"+
+            " WHERE CELULAR = '"+celular+"' \n"+
+            "AND CAST(FECHA_ALTA AS DATE) = CAST(GETDATE() AS DATE);\n\n" +
+            "INSERT INTO ATENCION_CLIENTE(NOMBRE, APELLIDOS, CELULAR, EMAIL, SEXO, MOTIVO, FECHA_ALTA)\n"+
+            "VALUES('"+nombre+"', '"+apellidos+"', '"+celular+"', '"+email+"', '"+sexo+"', '"+motivo+"', GETDATE());");
+    }
+</script>
+
+=======
+        }
+        var motivo = document.getElementById('motivo').value;
+
+        alert("SELECT \nCELULAR, \nCASE"+
+            "\n WHEN MOTIVO = 'Incidemcia' THEN MOTIVO"+
+            "\nWHEN MOTIVO = 'Queja' THEN MOTIVO \nWHEN MOTIVO = 'Reclamación' THEN MOTIVO \n" +
+            "ELSE '-' END AS MOTIVO \n" +
+            "CAST(FECHA_ALTA AS DATE) AS FECHA_ALTA\n"+
+            " FROM ATENCION_CLIENTE \n"+
+            " WHERE CELULAR = '"+celular+"' \n"+
+            "AND CAST(FECHA_ALTA AS DATE) = CAST(GETDATE() AS DATE);\n\n" +
+            "INSERT INTO ATENCION_CLIENTE(NOMBRE, APELLIDOS, CELULAR, EMAIL, SEXO, MOTIVO, FECHA_ALTA)\n"+
+            "VALUES('"+nombre+"', '"+apellidos+"', '"+celular+"', '"+email+"', '"+sexo+"', '"+motivo+"', GETDATE());");
+    }
+</script>
+
+>>>>>>> f8566ec (Tercera carga)

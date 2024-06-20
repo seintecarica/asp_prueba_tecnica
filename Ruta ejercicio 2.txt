@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+https://localhost:44312/Atencion/Create
+=======
+https://localhost:44312/Atencion/Create
+>>>>>>> f8566ec (Tercera carga)
+El puerto puede ser variable
